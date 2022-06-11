@@ -1,5 +1,7 @@
 package cars
 
+import "time"
+
 type Cars interface {
 	Grey() string
 	FuelType() string
@@ -28,7 +30,7 @@ func (c *car) Grey() string {
 }
 
 func (c *car) Age() int {
-	return 2022 - c.mfgYear
+	return time.Now().Year() - c.mfgYear
 }
 
 func (c *car) FuelType() string {
